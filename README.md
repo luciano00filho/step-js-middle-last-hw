@@ -16,3 +16,5 @@ DICA: usar `document.createElement()` ou `string literal`.
 ### O que você precisa fazer
 
 Criar um caso de teste para a manipulação do DOM que foi feita neste desafio. Você deve usar o [framework Jest](https://jestjs.io/pt-BR/docs/tutorial-jquery) para tal tarefa.
+
+Repare que o arquivo `package.json` já está presente. Para instalar as dependências dentro dele, use o comando `npm install`. 
