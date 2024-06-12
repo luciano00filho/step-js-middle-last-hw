@@ -1,7 +1,7 @@
 {
-  "name": "homework-25-26",
+  "name": "jest_dom",
   "version": "1.0.0",
-  "description": "Este repositório tem como objetivo receber os arquivos do desafio do dever de casa da aula 25 e 26 da disciplina JS Intermediário.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest tests/"
@@ -13,4 +13,6 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0"
   }
+  
 }
+

@@ -1,39 +1,37 @@
 export class Tabela {
-    #linhas;
-    #colunas;
 
-    set linhas(l){
-        this.#linhas = Number(l);
-    }
-    get getLinhas(){
-        return this.#linhas;
+    constructor(linhas,colunas) {
+
+        this.linhas = linhas;
+        this.colunas = colunas;
+
     }
 
-    set colunas(c){
-        this.#colunas = Number(c);
-    }
-    get getColunas(){
-        return this.#colunas;
-    }
+    gerarTabela(painel) {
 
-    constructor(row,col){
-        this.#linhas = Number(row);
-        this.#colunas = Number(col);
-    }
+        painel.innerHTML='';
 
-    montaTabelaHtml(preenchimentoPadrao){
-        let tb = document.createElement('table');
-        
-        for(let i = 0; i < this.getLinhas; i++){
-            let trow = document.createElement('tr');
-            
-            for(let j = 0; j < this.getColunas; j++){
-                let tcel = document.createElement('td');
-                tcel.innerHTML = preenchimentoPadrao;
-                trow.appendChild(tcel);
+        let tabela = document.createElement('table');
+
+        for (let i = 0; i < this.linhas; i++) {
+
+            let linhaTr = document.createElement('tr');
+
+            for (let i = 0; i < this.colunas; i++) {
+
+                let linhaTd = document.createElement('td');
+                linhaTd.innerHTML = '&nbsp';
+
+                linhaTr.appendChild(linhaTd);
+
             }
-            tb.appendChild(trow);
+
+            tabela.appendChild(linhaTr);
+
         }
-        return tb;
+
+        painel.appendChild(tabela);
+
     }
+
 }

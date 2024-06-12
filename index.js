@@ -1,19 +1,20 @@
-import { Utils } from './Utils.js';
-import { Tabela } from './Tabela.js';
+import {Tabela} from "./Tabela.js";
 
-const init = () => {
-    const cp1 = Utils.$('txtlinha');
-    const cp2 = Utils.$('txtcoluna');
-    const btn = Utils.$('btngerar');
-    const painel = Utils.$('dpainel');
+document.addEventListener('DOMContentLoaded',function(){
 
-    btn.addEventListener('click',() => {
-        painel.textContent = '';
-        const tb1 = new Tabela(cp1.value, cp2.value);
-        //tb1.linhas = cp1.value;
-        //tb1.colunas = cp2.value;
-        painel.appendChild(tb1.montaTabelaHtml('step'));
+    const btn = document.querySelector('button');
+
+    const painel = document.querySelector('.painel');
+
+    btn.addEventListener('click',function(){
+
+        const qtdLinhas = Number(document.querySelector('.linhas').value);
+        const qtdColunas = Number(document.querySelector('.colunas').value);
+
+        const tabela = new Tabela(qtdLinhas,qtdColunas);
+
+        tabela.gerarTabela(painel);
+
     });
-};
 
-document.addEventListener('DOMContentLoaded', init);
+});
